@@ -1,0 +1,189 @@
+{
+    "id": "nl.nu.headlines",
+    "name": {
+        "en": "NU.nl news headlines",
+		"nl": "NU.nl news headlines"
+    },
+    "description": {
+    	"en": "This app makes Homey read the headlines of the Dutch news site NU.nl.",
+    	"nl": "Deze app laat Homey de koppen voorlezen van de Nederlandse nieuwssite NU.nl."
+    },
+    "images": {
+		"large": "./assets/images/large.jpg",
+		"small": "./assets/images/small.jpg"
+	},
+	"category": "internet",
+    "version": "1.0.0",
+    "compatibility": "0.x || 1.x",
+    "author": {
+        "name": "Gerard Nijboer",
+        "email": "me@gerardnijboer.com"
+    },
+    "tags": {
+    	"en": ["news", "nu.nl", "dutch", "netherlands", "entertainment"],
+    	"nl": ["nieuws", "nu.nl", "nederlands", "nederland", "entertainment"]
+    },
+	"permissions": [
+		"homey:manager:speech-output"
+	],
+	"flow": {
+		"actions": [
+			{
+				"id": "nl_nu_read_news",
+				"title": {
+					"nl": "Lees het nieuws voor van NU.nl",
+					"en": "Read the news"
+				},
+				"args": [
+					{
+						"name": "category",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "algemeen",
+								"label": {
+									"en": "General",
+									"nl": "Algemeen"
+								}
+							},
+							{
+								"id": "economie",
+								"label": {
+									"en": "Economy",
+									"nl": "Economie"
+								}
+							},
+							{
+								"id": "internet",
+								"label": {
+									"en": "Internet",
+									"nl": "Internet"
+								}
+							},
+							{
+								"id": "sport",
+								"label": {
+									"en": "Sports",
+									"nl": "Sport"
+								}
+							},
+							{
+								"id": "achterklap",
+								"label": {
+									"en": "Gossip",
+									"nl": "Achterklap"
+								}
+							},
+							{
+								"id": "opmerkelijk",
+								"label": {
+									"en": "Remarkable",
+									"nl": "Opmerkelijk"
+								}
+							},
+							{
+								"id": "muziek",
+								"label": {
+									"en": "Music",
+									"nl": "Muziek"
+								}
+							},
+							{
+								"id": "dvd",
+								"label": {
+									"en": "DVD",
+									"nl": "DVD"
+								}
+							},
+							{
+								"id": "film",
+								"label": {
+									"en": "Films",
+									"nl": "Film"
+								}
+							},
+							{
+								"id": "boek",
+								"label": {
+									"en": "Books",
+									"nl": "Boek"
+								}
+							},
+							{
+								"id": "games",
+								"label": {
+									"en": "Games",
+									"nl": "Games"
+								}
+							},
+							{
+								"id": "lifehacking",
+								"label": {
+									"en": "Lifehacking",
+									"nl": "Lifehacking"
+								}
+							},
+							{
+								"id": "plugged",
+								"label": {
+									"en": "Plugged",
+									"nl": "Plugged"
+								}
+							},
+							{
+								"id": "auto",
+								"label": {
+									"en": "Cars",
+									"nl": "Auto"
+								}
+							},
+							{
+								"id": "wetenschap",
+								"label": {
+									"en": "Science",
+									"nl": "Wetenschap"
+								}
+							},
+							{
+								"id": "gezondheid",
+								"label": {
+									"en": "Health",
+									"nl": "Gezondheid"
+								}
+							}
+						]
+					},
+					{
+						"name": "content",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "title",
+								"label": {
+									"en": "Titles",
+									"nl": "Titels"
+								}
+							},
+							{
+								"id": "description",
+								"label": {
+									"en": "Titles and descriptions",
+									"nl": "Titels en omschrijvingen"
+								}
+							}
+						]
+					},
+					{
+						"name": "max",
+						"type": "number",
+						"min": 0,
+						"placeholder": {
+							"nl": "Max items (0=alles)",
+							"en": "Max items (0=all)"
+						}
+					}
+				]
+			}
+		]
+	}
+}
