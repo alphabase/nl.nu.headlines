@@ -2,7 +2,7 @@
     "id": "nl.nu.headlines",
     "name": {
         "en": "NU.nl news headlines",
-		"nl": "NU.nl news headlines"
+		"nl": "NU.nl nieuws headlines"
     },
     "description": {
     	"en": "This app makes Homey read the headlines of the Dutch news site NU.nl.",
