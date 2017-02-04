@@ -1,5 +1,6 @@
 {
 	"foundNews": "Er zijn __count__ nieuwsberichten",
 	"noNews": "Er zijn geen nieuwsberichten gevonden",
-	"errorParsing": "Er is een fout opgetreden tijdens het verwerken van het nieuws"
+	"errorParsing": "Er is een fout opgetreden tijdens het verwerken van het nieuws",
+	"errorDownloading": "Er is een fout opgetreden tijdens het downloaden van het nieuws"
 }

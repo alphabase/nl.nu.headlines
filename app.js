@@ -29,10 +29,11 @@ function init() {
 			
 			parser.on('error', function(error) {
 				Homey.manager('speech-output').say(__('errorParsing'));
-			    console.log(error);
 			});
 			
 			res.pipe(parser);
+		}).on('error', function(e) {
+			Homey.manager('speech-output').say(__('errorDownloading'));
 		});
 		callback(null, true);
 	});
