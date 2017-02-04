@@ -1,8 +1,8 @@
 {
     "id": "nl.nu.headlines",
     "name": {
-        "en": "NU.nl news headlines",
-		"nl": "NU.nl nieuws headlines"
+        "en": "NU.nl news",
+		"nl": "NU.nl nieuws"
     },
     "description": {
     	"en": "This app makes Homey read the headlines of the Dutch news site NU.nl.",
@@ -14,7 +14,7 @@
 	},
 	"category": "internet",
     "version": "1.0.0",
-    "compatibility": "0.x || 1.x",
+    "compatibility": "1.x",
     "author": {
         "name": "Gerard Nijboer",
         "email": "me@gerardnijboer.com"
@@ -32,7 +32,7 @@
 				"id": "nl_nu_read_news",
 				"title": {
 					"nl": "Lees het nieuws voor van NU.nl",
-					"en": "Read the news"
+					"en": "Read the news from NU.nl"
 				},
 				"args": [
 					{
