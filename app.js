@@ -17,13 +17,19 @@ function init() {
 			
 			parser.on('end', function() {
 				if (items.length > 0) {
+					Homey.manager('speech-output').say(__('foundNews', {'count': items.length}));
 					for (var i = 0, length = items.length; i < length; i++) {
 						Homey.manager('speech-output').say(items[i].title);
 						if (args.content == 'description') Homey.manager('speech-output').say(items[i].description);
 					}
 				} else {
-					Homey.manager('speech-output').say('Er zijn geen nieuwsberichten gevonden');
+					Homey.manager('speech-output').say(__('noNews'));
 				}
+			});
+			
+			parser.on('error', function(error) {
+				Homey.manager('speech-output').say(__('errorParsing'));
+			    console.log(error);
 			});
 			
 			res.pipe(parser);

@@ -1,1 +1,5 @@
-{}
+{
+	"foundNews": "There are __count__ news items",
+	"noNews": "No news items have been found",
+	"errorParsing": "An error has occured when parsing the news feed"
+}
