@@ -20,8 +20,8 @@
         "email": "me@gerardnijboer.com"
     },
     "tags": {
-    	"en": ["news", "nu.nl", "dutch", "netherlands", "entertainment"],
-    	"nl": ["nieuws", "nu.nl", "nederlands", "nederland", "entertainment"]
+    	"en": ["news", "nu.nl", "dutch", "netherlands", "entertainment", "rss", "internet", "feed"],
+    	"nl": ["nieuws", "nu.nl", "nederlands", "nederland", "entertainment", "rss", "internet", "overzicht"]
     },
 	"permissions": [
 		"homey:manager:speech-output"
@@ -31,8 +31,8 @@
 			{
 				"id": "nl_nu_read_news",
 				"title": {
-					"nl": "Lees het nieuws voor van NU.nl",
-					"en": "Read the news from NU.nl"
+					"nl": "Lees het nieuws voor",
+					"en": "Read the news"
 				},
 				"args": [
 					{

@@ -9,3 +9,4 @@ The flow action card has three settings:
 - Max items: Limits the number of headlines to read from the news feed. Use 0 for unlimited.
 
 If no news items have been found in the news feed, Homey will inform you about this.
+Homey pauses for a second between reading two news items.
