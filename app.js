@@ -115,7 +115,6 @@ function readNewsItem(items, index, mode) {
 		// Read the title of the news item
 		Homey.log('Reading a news item: '+items[index].title);
 		speechEngine.say(items[index].title, function (err, success) {
-			Homey.log(success);
 			// If we also need to read the description, we continue here
 			if (mode == 'description') {
 				// Read the description of the news item
