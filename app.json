@@ -24,7 +24,8 @@
     	"nl": ["nieuws", "nu.nl", "nederlands", "nederland", "entertainment", "rss", "internet", "overzicht"]
     },
 	"permissions": [
-		"homey:manager:speech-output"
+		"homey:manager:speech-output",
+		"homey:manager:speech-input"
 	],
 	"flow": {
 		"actions": [
@@ -185,5 +186,41 @@
 				]
 			}
 		]
-	}
+	},
+	"speech": [
+		{
+			"id": "news",
+			"importance": 1,
+			"triggers": {
+				"en": [ "news", "news items", "latest news" ],
+				"nl": [ "nieuws", "nieuwsberichten", "laatste nieuws" ]
+			}
+		},
+		{
+			"id": "news_category",
+			"importance": 0.6,
+			"triggers": {
+				"en": [ "algemeen", "economie", "internet", "sport", "achterklap", "opmerkelijk", "muziek", "dvd", "film", "boek", "games", "lifehacking", "plugged", "auto", "wetenschap", "gezondheid" ],
+				"nl": [ "algemeen", "economie", "internet", "sport", "achterklap", "opmerkelijk", "muziek", "dvd", "film", "boek", "games", "lifehacking", "plugged", "auto", "wetenschap", "gezondheid" ]
+			}
+		}
+	],
+	"speechexamples": [
+		{
+			"en": "Read me the news",
+			"nl": "Lees het nieuws voor"
+		},
+		{
+			"en": "Is there any news?",
+			"nl": "Is er nog nieuws?"
+		},
+		{
+			"en": "Is there sport news?",
+			"nl": "Is er sport nieuws?"
+		},
+		{
+			"en": "Would you please read me news from the category games?",
+			"nl": "Wil je me alsjeblieft het nieuws uit de categorie games voorlezen?"
+		}
+	]
 }

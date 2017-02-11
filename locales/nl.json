@@ -1,4 +1,6 @@
 {
+	"whichCategory": "Welke categorie?",
+	"unknownCategory": "De categorie __category__ is niet bekend",
 	"foundNews": "Er zijn __count__ nieuwsberichten",
 	"noNews": "Er zijn geen nieuwsberichten gevonden",
 	"errorParsing": "Er is een fout opgetreden tijdens het verwerken van het nieuws",

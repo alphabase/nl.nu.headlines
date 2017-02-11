@@ -1,4 +1,6 @@
 {
+	"whichCategory": "Which category?",
+	"unknownCategory": "The category __category__ is unknown",
 	"foundNews": "There are __count__ news items",
 	"noNews": "No news items have been found",
 	"errorParsing": "An error has occured while parsing the news feed",
