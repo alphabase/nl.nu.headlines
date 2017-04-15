@@ -1,7 +1,7 @@
 'use strict';
 
 // This is an array with the known RSS XML feeds that can be found at http://www.nu.nl/rss/__category__
-var categories = ['algemeen', 'economie', 'internet', 'sport', 'achterklap', 'opmerkelijk', 'muziek', 'dvd', 'film', 'boek', 'games', 'lifehacking', 'plugged', 'auto', 'wetenschap', 'gezondheid'];
+var categories = ['algemeen', 'economie', 'internet', 'sport', 'achterklap', 'opmerkelijk', 'muziek', 'dvd', 'film', 'boek', 'games', 'lifehacking', 'plugged', 'auto', 'wetenschap', 'gezondheid', 'laatste'];
 
 var speechEngine;
 
@@ -36,6 +36,7 @@ Homey.manager('speech-input').on('speech', function(speech, callback) {
 		// If we were not triggered with a news category, we have to ask the user to tell us which news category is wanted
 		Homey.log('Category unknown, asking for category input.');
 		speechEngine.ask(__('whichCategory'), function (err, result) {
+			console.log(result);
 			if (err) return Homey.error(err);
 			if (result == false) return Homey.log('No category was provided through speech input, exiting...');
 			getNewsItems(result, 'title', 0);
@@ -60,6 +61,11 @@ function getNewsItems(category, mode, max) {
 		Homey.log('Unknown category: '+category);
 		speechEngine.say(__('unknownCategory', {'category': category}));
 		return;
+	}
+	
+	// The category 'laatste' should be casted to an empty string for its RSS URL to be correct
+	if (category == 'laatste') {
+		category = '';
 	}
 	
 	// Import necessary classes

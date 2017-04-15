@@ -24,6 +24,7 @@ Homey pauses for a second between reading two news items.
 - auto
 - wetenschap
 - gezondheid
+- laatste
 
 ## Speech input
 
@@ -33,12 +34,10 @@ If no news category was found in the speech input, Homey will ask you for it.
 The supported news-related trigger words are, in English:
 - news
 - news items
-- latest news
 
 The supported news-related trigger words are, in Dutch:
 - nieuws
 - nieuwsberichten
-- laatste nieuws
 
 The news category titles have not been translated into English.
 If the app is triggered by speech input, the default content to read is only news titles, not descriptions. Also, all news items in the RSS feed are read without limitations.
@@ -47,12 +46,14 @@ If the app is triggered by speech input, the default content to read is only new
 
 **English**
 - Read me the news
+- Tell me the latest news
 - Is there any news?
 - What is the news in the sport section?
 - Would you please read me news from the category games?
 
 **Dutch**
 - Lees het nieuws voor
+- Vertel me het laatste nieuws
 - Is er nog nieuws?
 - Wat is het nieuws in de sport categorie?
 - Wil je me alsjeblieft het nieuws uit de categorie games voorlezen?
