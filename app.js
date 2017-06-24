@@ -1,7 +1,7 @@
 'use strict';
 
 // This is an array with the known RSS XML feeds that can be found at http://www.nu.nl/rss/__category__
-var categories = ['algemeen', 'economie', 'internet', 'sport', 'achterklap', 'opmerkelijk', 'muziek', 'dvd', 'film', 'boek', 'games', 'lifehacking', 'plugged', 'auto', 'wetenschap', 'gezondheid'];
+var categories = ['algemeen', 'economie', 'internet', 'sport', 'achterklap', 'opmerkelijk', 'muziek', 'dvd', 'film', 'boek', 'games', 'lifehacking', 'plugged', 'auto', 'wetenschap', 'gezondheid', 'laatste'];
 
 var speechEngine;
 
@@ -70,6 +70,11 @@ function getNewsItems(category, mode, max) {
 		Homey.log('Unknown category: '+category);
 		speechEngine.say(__('unknownCategory', {'category': category}));
 		return;
+	}
+	
+	// The category 'laatste' should be casted to an empty string for its RSS URL to be correct
+	if (category == 'laatste') {
+		category = '';
 	}
 	
 	// Import necessary classes

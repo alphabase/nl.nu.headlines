@@ -13,7 +13,7 @@
 		"small": "./assets/images/small.jpg"
 	},
 	"category": "internet",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "compatibility": "1.x",
     "author": {
         "name": "Gerard Nijboer",
@@ -151,6 +151,13 @@
 									"en": "Health",
 									"nl": "Gezondheid"
 								}
+							},
+							{
+								"id": "laatste",
+								"label": {
+									"en": "Most recent",
+									"nl": "Net binnen"
+								}
 							}
 						]
 					},
@@ -192,16 +199,16 @@
 			"id": "news",
 			"importance": 1,
 			"triggers": {
-				"en": [ "news", "news items", "latest news" ],
-				"nl": [ "nieuws", "nieuwsberichten", "laatste nieuws" ]
+				"en": [ "news", "news items" ],
+				"nl": [ "nieuws", "nieuwsberichten" ]
 			}
 		},
 		{
 			"id": "news_category",
 			"importance": 0.6,
 			"triggers": {
-				"en": [ "algemeen", "economie", "internet", "sport", "achterklap", "opmerkelijk", "muziek", "dvd", "film", "boek", "games", "lifehacking", "plugged", "auto", "wetenschap", "gezondheid" ],
-				"nl": [ "algemeen", "economie", "internet", "sport", "achterklap", "opmerkelijk", "muziek", "dvd", "film", "boek", "games", "lifehacking", "plugged", "auto", "wetenschap", "gezondheid" ]
+				"en": [ "algemeen", "economie", "internet", "sport", "achterklap", "opmerkelijk", "muziek", "dvd", "film", "boek", "games", "lifehacking", "plugged", "auto", "wetenschap", "gezondheid", "laatste" ],
+				"nl": [ "algemeen", "economie", "internet", "sport", "achterklap", "opmerkelijk", "muziek", "dvd", "film", "boek", "games", "lifehacking", "plugged", "auto", "wetenschap", "gezondheid", "laatste" ]
 			}
 		}
 	],
@@ -209,6 +216,10 @@
 		{
 			"en": "Read me the news",
 			"nl": "Lees het nieuws voor"
+		},
+		{
+			"en": "Tell me the latest news",
+			"nl": "Vertel me het laatste nieuws"
 		},
 		{
 			"en": "Is there any news?",
