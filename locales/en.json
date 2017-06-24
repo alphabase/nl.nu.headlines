@@ -4,5 +4,18 @@
 	"foundNews": "There are __count__ news items",
 	"noNews": "No news items have been found",
 	"errorParsing": "An error has occured while parsing the news feed",
-	"errorDownloading": "An error has occured while downloading the news feed"
+	"errorDownloading": "An error has occured while downloading the news feed",
+	"settings": {
+		"title": "NU.nl news",
+		"description": "These settings are used as default values when the app is triggered through speech input.",
+		"fieldset": "General settings",
+		"mode": "Content mode",
+		"modeOptions": {
+			"title": "Titles",
+			"description": "Titles and descriptions"
+		},
+		"max": "Number of items",
+		"save": "Save",
+		"saved": "The settings have been saved."
+	}
 }

@@ -10,7 +10,15 @@ function init() {
 	speechEngine = Homey.manager('speech-output');
 	Homey.log('NU.nl news app loaded.');
 	
-	// TODO: Check for existance of settings here. Else created default values.
+	// Create settings variables with default values if none seem to exist
+	if (!Homey.manager('settings').get('mode')) {
+		Homey.manager('settings').set('mode', 'title');
+		Homey.log('Created setting: mode');
+	}
+	if (!Homey.manager('settings').get('max')) {
+		Homey.manager('settings').set('max', 10);
+		Homey.log('Created setting: max');
+	}
 }
 
 // This code is run whenever the action card is triggered in the Homey flow editor
@@ -33,16 +41,14 @@ Homey.manager('speech-input').on('speech', function(speech, callback) {
 	
 	// If we were indeed triggered on a news category, we have plenty of information to continue and fetch news items
 	if (category) {
-		// TODO: Use app settings instead of default values
-		getNewsItems(category.text, 'title', 0);
+		getNewsItems(category.text, Homey.manager('settings').get('mode'), Homey.manager('settings').get('max'));
 	} else {
 		// If we were not triggered with a news category, we have to ask the user to tell us which news category is wanted
 		Homey.log('Category unknown, asking for category input.');
 		speechEngine.ask(__('whichCategory'), function (err, result) {
 			if (err) return Homey.error(err);
 			if (result == false) return Homey.log('No category was provided through speech input, exiting...');
-			// TODO: Use app settings instead of default values
-			getNewsItems(result, 'title', 0);
+			getNewsItems(result, Homey.manager('settings').get('mode'), Homey.manager('settings').get('max'));
 		});
 	}
 	

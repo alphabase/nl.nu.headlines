@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <h1 data-i18n="settings.title">NU.nl news</h1>
+
+        <fieldset>
+            <legend data-i18n="settings.fieldset">General settings</legend>
+	        <p data-i18n="settings.description">This app makes Homey read the headlines of the Dutch news site NU.nl.</p>
+
+            <div class="field row">
+                <label for="mode" data-i18n="settings.mode">Content mode</label>
+                <select id="mode">
+                	<option selected="selected" value="title" data-i18n="settings.modeOptions.title">Titles</option>
+                	<option value="description" data-i18n="settings.modeOptions.description">Titles and descriptions</option>
+                </select>
+            </div>
+            <div class="field row">
+                <label for="max" data-i18n="settings.max">Number of items</label>
+                <input id="max" type="number" value="8" />
+            </div>
+
+        </fieldset>
+
+        <button class="right" onclick="save()" data-i18n="settings.save">Save</button>
+
+        <script type="text/javascript">
+        function onHomeyReady(){
+            Homey.ready();
+            Homey.get('mode', function(err, mode){
+                if (err) return console.error('Could not get setting: mode', err);
+                if (mode) {
+                	document.getElementById('mode').value = mode;
+                }
+            });
+            Homey.get('max', function(err, max){
+                if (err) return console.error('Could not get setting: max', err);
+                if (max) {
+                    document.getElementById('max').value = max;
+                }
+            });
+        }
+
+        function save() {
+            Homey.set('mode', document.getElementById('mode').value);
+            Homey.set('max', document.getElementById('max').value);
+            Homey.alert(__('settings.saved'));
+        }
+        </script>
+
+    </body>
+</html>
