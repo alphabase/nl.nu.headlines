@@ -13,12 +13,20 @@
 		"small": "./assets/images/small.jpg"
 	},
 	"category": "internet",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "compatibility": "1.x",
     "author": {
         "name": "Gerard Nijboer",
         "email": "me@gerardnijboer.com"
     },
+    "contributors": {
+		"developers": [
+			{
+				"name": "Gerard Nijboer",
+				"email": "me@gerardnijboer.com"
+			}
+		]
+	},
     "tags": {
     	"en": ["news", "nu.nl", "dutch", "netherlands", "entertainment", "rss", "internet", "feed"],
     	"nl": ["nieuws", "nu.nl", "nederlands", "nederland", "entertainment", "rss", "internet", "overzicht"]
