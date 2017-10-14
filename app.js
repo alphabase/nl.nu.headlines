@@ -1,6 +1,6 @@
 'use strict';
 
-// This is an array with the known RSS XML feeds that can be found at http://www.nu.nl/rss/__category__
+// This is an array with the known RSS XML feeds that can be found at https://www.nu.nl/rss/__category__
 var categories = ['algemeen', 'economie', 'internet', 'sport', 'achterklap', 'opmerkelijk', 'muziek', 'dvd', 'film', 'boek', 'games', 'lifehacking', 'plugged', 'auto', 'wetenschap', 'gezondheid', 'laatste'];
 
 var speechEngine;
@@ -78,12 +78,12 @@ function getNewsItems(category, mode, max) {
 	}
 	
 	// Import necessary classes
-	var http = require('http');
+	var https = require('https');
 	var FeedMe = require('feedme');
 	
 	// Get the rss news feed from the internet
 	Homey.log('Getting news items for category: '+category);
-	http.get('http://www.nu.nl/rss/'+category, function(res) {
+	https.get('https://www.nu.nl/rss/'+category, function(res) {
 		var parser = new FeedMe();
 		var items = [];
 		
