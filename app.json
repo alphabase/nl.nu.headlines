@@ -1,253 +1,115 @@
 {
-    "id": "nl.nu.headlines",
-    "name": {
-        "en": "NU.nl news",
+	"id": "nl.nu.headlines",
+	"version": "2.0.0",
+	"compatibility": ">=1.5.0",
+	"sdk": 2,
+	"name": {
+		"en": "NU.nl news",
 		"nl": "NU.nl nieuws"
-    },
-    "description": {
-    	"en": "This app makes Homey read the headlines of the Dutch news site NU.nl.",
-    	"nl": "Deze app laat Homey de koppen voorlezen van de Nederlandse nieuwssite NU.nl."
-    },
-    "images": {
-		"large": "./assets/images/large.jpg",
-		"small": "./assets/images/small.jpg"
 	},
-	"category": "internet",
-    "version": "1.0.7",
-    "compatibility": "1.x",
-    "author": {
-        "name": "Gerard Nijboer",
-        "email": "me@gerardnijboer.com"
-    },
-    "contributors": {
-		"developers": [
-			{
+	"description": {
+		"en": "This app makes Homey read the headlines of the Dutch news site NU.nl.",
+		"nl": "Deze app laat Homey de koppen voorlezen van de Nederlandse nieuwssite NU.nl."
+	},
+	"category": [
+		"internet"
+	],
+	"tags": {
+		"en": ["news", "nu.nl", "dutch", "netherlands", "entertainment", "rss", "internet", "feed"],
+		"nl": ["nieuws", "nu.nl", "nederlands", "nederland", "entertainment", "rss", "internet", "overzicht"]
+	},
+	"permissions": [
+		"homey:manager:speech-output",
+		"homey:manager:speech-input"
+	],
+	"images": {
+		"large": "/assets/images/large.png",
+		"small": "/assets/images/small.png"
+	},
+	"author": {
+		"name": "Gerard Nijboer",
+		"email": "me@gerardnijboer.com"
+	},
+	"contributors": {
+		"developers": [{
 				"name": "Gerard Nijboer",
 				"email": "me@gerardnijboer.com"
 			}
 		]
 	},
 	"contributing": {
-        "donate": {
-            "paypal": {
-                "email": "gerard@alphabase.nl",
-                "currency": "EUR"
-            }
-        }
-    },
-    "tags": {
-    	"en": ["news", "nu.nl", "dutch", "netherlands", "entertainment", "rss", "internet", "feed"],
-    	"nl": ["nieuws", "nu.nl", "nederlands", "nederland", "entertainment", "rss", "internet", "overzicht"]
-    },
-	"permissions": [
-		"homey:manager:speech-output",
-		"homey:manager:speech-input"
-	],
-	"flow": {
-		"actions": [
-			{
-				"id": "nl_nu_read_news",
-				"title": {
-					"nl": "Lees het nieuws voor",
-					"en": "Read the news"
-				},
-				"args": [
-					{
-						"name": "category",
-						"type": "dropdown",
-						"values": [
-							{
-								"id": "algemeen",
-								"label": {
-									"en": "General",
-									"nl": "Algemeen"
-								}
-							},
-							{
-								"id": "economie",
-								"label": {
-									"en": "Economy",
-									"nl": "Economie"
-								}
-							},
-							{
-								"id": "internet",
-								"label": {
-									"en": "Internet",
-									"nl": "Internet"
-								}
-							},
-							{
-								"id": "sport",
-								"label": {
-									"en": "Sports",
-									"nl": "Sport"
-								}
-							},
-							{
-								"id": "achterklap",
-								"label": {
-									"en": "Gossip",
-									"nl": "Achterklap"
-								}
-							},
-							{
-								"id": "opmerkelijk",
-								"label": {
-									"en": "Remarkable",
-									"nl": "Opmerkelijk"
-								}
-							},
-							{
-								"id": "muziek",
-								"label": {
-									"en": "Music",
-									"nl": "Muziek"
-								}
-							},
-							{
-								"id": "dvd",
-								"label": {
-									"en": "DVD",
-									"nl": "DVD"
-								}
-							},
-							{
-								"id": "film",
-								"label": {
-									"en": "Films",
-									"nl": "Film"
-								}
-							},
-							{
-								"id": "boek",
-								"label": {
-									"en": "Books",
-									"nl": "Boek"
-								}
-							},
-							{
-								"id": "games",
-								"label": {
-									"en": "Games",
-									"nl": "Games"
-								}
-							},
-							{
-								"id": "lifehacking",
-								"label": {
-									"en": "Lifehacking",
-									"nl": "Lifehacking"
-								}
-							},
-							{
-								"id": "plugged",
-								"label": {
-									"en": "Plugged",
-									"nl": "Plugged"
-								}
-							},
-							{
-								"id": "auto",
-								"label": {
-									"en": "Cars",
-									"nl": "Auto"
-								}
-							},
-							{
-								"id": "wetenschap",
-								"label": {
-									"en": "Science",
-									"nl": "Wetenschap"
-								}
-							},
-							{
-								"id": "gezondheid",
-								"label": {
-									"en": "Health",
-									"nl": "Gezondheid"
-								}
-							},
-							{
-								"id": "laatste",
-								"label": {
-									"en": "Most recent",
-									"nl": "Net binnen"
-								}
-							}
-						]
-					},
-					{
-						"name": "content",
-						"type": "dropdown",
-						"values": [
-							{
-								"id": "title",
-								"label": {
-									"en": "Titles",
-									"nl": "Titels"
-								}
-							},
-							{
-								"id": "description",
-								"label": {
-									"en": "Titles and descriptions",
-									"nl": "Titels en omschrijvingen"
-								}
-							}
-						]
-					},
-					{
-						"name": "max",
-						"type": "number",
-						"min": 0,
-						"placeholder": {
-							"nl": "Max items (0=alles)",
-							"en": "Max items (0=all)"
-						}
-					}
-				]
+		"donate": {
+			"paypal": {
+				"email": "gerard@alphabase.nl",
+				"currency": "EUR"
 			}
-		]
+		}
 	},
-	"speech": [
-		{
-			"id": "news",
-			"importance": 1,
-			"triggers": {
-				"en": [ "news", "news items" ],
-				"nl": [ "nieuws", "nieuwsberichten" ]
+	"speech": {
+		"en": {
+			"element": {
+				"actionWords": {
+					"type": "regex",
+					"value": "(read)"
+				},
+				"categoryWords": {
+					"type": "regex",
+					"value": "(algemeen|economie|internet|sport|achterklap|opmerkelijk|muziek|dvd|film|boek|games|lifehacking|plugged|auto|wetenschap|gezondheid|laatste)"
+				},
+				"newsWords": {
+					"type": "regex",
+					"value": "(latest news|news items|news)"
+				}
+			},
+			"group": {
+				"main": {
+					"set": "(actionWords) && (categoryWords) && newsWords",
+					"ordered": false,
+					"capturingGroup": true,
+					"allowDisconnect": true
+				}
 			}
 		},
-		{
-			"id": "news_category",
-			"importance": 0.6,
-			"triggers": {
-				"en": [ "algemeen", "economie", "internet", "sport", "achterklap", "opmerkelijk", "muziek", "dvd", "film", "boek", "games", "lifehacking", "plugged", "auto", "wetenschap", "gezondheid", "laatste" ],
-				"nl": [ "algemeen", "economie", "internet", "sport", "achterklap", "opmerkelijk", "muziek", "dvd", "film", "boek", "games", "lifehacking", "plugged", "auto", "wetenschap", "gezondheid", "laatste" ]
+		"nl": {
+			"element": {
+				"actionWords": {
+					"type": "regex",
+					"value": "(voorlezen|oplezen|lees|lezen|vertellen|vertel)"
+				},
+				"categoryWords": {
+					"type": "regex",
+					"value": "(algemeen|economie|internet|sport|achterklap|opmerkelijk|muziek|dvd|film|boek|games|lifehacking|plugged|auto|wetenschap|gezondheid|laatste)"
+				},
+				"newsWords": {
+					"type": "regex",
+					"value": "(laatste nieuws|nieuws|nieuwsberichten)"
+				}
+			},
+			"group": {
+				"main": {
+					"set": "(actionWords) && (categoryWords) && newsWords",
+					"ordered": false,
+					"capturingGroup": true,
+					"allowDisconnect": true
+				}
 			}
 		}
-	],
-	"speechexamples": [
-		{
-			"en": "Read me the news",
-			"nl": "Lees het nieuws voor"
-		},
-		{
-			"en": "Tell me the latest news",
-			"nl": "Vertel me het laatste nieuws"
-		},
-		{
-			"en": "Is there any news?",
-			"nl": "Is er nog nieuws?"
-		},
-		{
-			"en": "What is the news in the sport section?",
-			"nl": "Wat is het nieuws in de sport categorie?"
-		},
-		{
-			"en": "Would you please read me news from the category games?",
-			"nl": "Wil je me alsjeblieft het nieuws uit de categorie games voorlezen?"
-		}
-	]
+	},
+	"speechexamples": {
+		"en": [
+			"Read me the news",
+			"Tell me the latest news",
+			"Is there any news?",
+			"What is the news in the sport section?",
+			"Would you please read me news from the category games?"
+		],
+		"nl": [
+			"Lees het nieuws voor",
+			"Vertel me het laatste nieuws",
+			"Is er nog nieuws?",
+			"Wat is het nieuws in de sport categorie?",
+			"Wil je me alsjeblieft het nieuws uit de categorie games voorlezen?"
+		]
+	}
+
 }
